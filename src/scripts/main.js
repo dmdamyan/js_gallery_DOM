@@ -1,20 +1,12 @@
 'use strict';
 
-const nav = document.querySelector('.list-item');
+const nav = document.querySelector('.gallery__list');
 const imgLarge = document.querySelector('.gallery__large-img');
-const a = document.querySelector('a');
-const img = document.querySelector('.gallery__thumb');
 
-a.addEventListener('click', () => {
-  event.preventDefault();
-});
+nav.addEventListener('click', (events) => {
+  events.preventDefault();
 
-img.addEventListener('click', () => {
-  event.preventDefault();
-});
-
-nav.addEventListener('click', () => {
-  const link = event.target.closest('.list-item__link', '.gallery__img');
+  const link = events.target.closest('.gallery__thumb');
 
   if (!link) {
     return;
